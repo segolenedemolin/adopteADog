@@ -1,0 +1,20 @@
+<section *ngIf="!dog.isAdopted" style="width: 80%; margin: auto;">
+  <div>
+    <h3 style="color: darkolivegreen">Etes vous sûr(e)(s) de vouloir adopter ce chien?</h3>
+  </div>
+  <div class="card" style="background-color: rgb(31, 30, 30);">
+    <img [src]="dog.picture" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title" style="color: firebrick;">{{dog.name}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted" style="color: darkolivegreen;">Race : {{dog.race}}</h6>
+              <p style="color: darkolivegreen;">Age: {{dog.age}} ans.</p>
+              <p class="card-text" style="color: darkolivegreen;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean diam dolor, dictum non sem eu, pulvinar convallis nisl. Duis dictum ante nec sollicitudin fringilla. Etiam ultricies non diam at mattis. Vivamus ut mollis ex, ut laoreet tortor.</p>
+            </div>
+    <button type="submit" class="btn btn-outline-light" style="width: 20%; margin: auto;" (click)="onSubmit(!dog.isAdopted)">Adopter</button>
+    </div>
+</section>
+
+<section *ngIf="dog.isAdopted" style="width: 80%;margin: auto;display: flex;flex-direction: column; align-items: center;">
+  <h5 style="color: firebrick;">Ce chien a déjà trouver une famille, peut-être trouverez-vous votre bohneur parmis les chiens restants!</h5>
+  <a routerLink="" class="btn btn-success">Retourner à la liste des chiens</a>
+</section>

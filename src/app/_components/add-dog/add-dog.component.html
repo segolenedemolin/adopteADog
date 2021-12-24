@@ -1,0 +1,35 @@
+<section style="background-color: rgb(82, 80, 80);">
+  <h1 class="text-center"style="background-color: rgb(31, 30, 30); color: rgb(128, 46, 59);"> {{dog.name}}</h1>
+  <div class="row"  style="background-color: rgb(31, 30, 30);">
+    <div class="col-md-4">
+      <img [src]="dog.picture" alt="" style="width: 350px; margin-top: 25%;" >
+    </div>
+    <div class="col-md-5">
+      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div class="form-group" style="color: rgb(128, 46, 59);">
+          <label for="name">Nom</label>
+          <input type="text" style="background-color: rgb(131, 65, 76);" class="form-control" id="name" required
+          [(ngModel)]="dog.name" name="name" #name=ngModel>
+          <label for="name">Race</label>
+          <input type="text" class="form-control" style="background-color: rgb(131, 65, 76);" id="type" required
+          [(ngModel)]="dog.race" name="types" #types=ngModel>
+          <label for="name">Age</label>
+          <input type="text" class="form-control" style="background-color: rgb(131, 65, 76);" id="date" required
+          [(ngModel)]="dog.age" name="created" #created=ngModel>
+          <label for="name">Picture</label>
+          <input type="text" class="form-control" style="background-color: rgb(131, 65, 76);" id="picture" required
+          [(ngModel)]="dog.picture" name="picture" #picture=ngModel>
+          <label for="name">Is Adopted</label>
+          <input type="text" class="form-control" style="background-color: rgb(131, 65, 76);" id="picture" required
+          [(ngModel)]="dog.isAdopted" name="adopted" #adopted=ngModel>
+
+        </div>
+        <div class="section center">
+          <button class="submit btn" type="submit" style="margin:5px;background-color: rgb(138, 173, 77);">
+            Ajouter
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

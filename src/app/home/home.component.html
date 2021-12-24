@@ -1,0 +1,19 @@
+<app-nav></app-nav>
+
+<div class="container">
+  <div class="mx-auto mt-4">
+    <div class="row">
+        <div *ngFor="let dog of dogs"  class="card mx-auto mt-4" style="width: 18rem; background-color: rgb(31, 30, 30);">
+          <img [src]="dog.picture" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title" style="color: firebrick;">{{dog.name}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Age : {{dog.age}} ans</h6>
+              <p class="card-text" style="color: darkolivegreen;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean diam dolor, dictum non sem eu, pulvinar convallis nisl. Duis dictum ante nec sollicitudin fringilla. Etiam ultricies non diam at mattis. Vivamus ut mollis ex, ut laoreet tortor.</p>
+              <div class="bouttons">
+                <a [routerLink]="['adopt/',dog.id]" class="btn mr-2" style="color: peru; border:solid 1px; border-radius: 30px;"><i class="fas fa-link"></i> Adopter</a>
+                <a [routerLink]="['details/',dog.id]" class="btn " style="color:seagreen;border:solid 1px; border-radius: 30px;"><i class="fab fa-github"></i> Detail</a>
+              </div>
+        </div>
+    </div>
+  </div>
+</div>

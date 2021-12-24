@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="card" style="width:60%; margin:auto; background-color: rgb(31, 30, 30);">
+    <img [src]="dog.picture" class="card-img-left">
+    <div class="card-body">
+      <h5 class="card-title" style="color: firebrick;">{{dog.name}}</h5>
+      <h6 class="card-title" style="color: rgb(128, 46, 59);">{{dog.race}}</h6>
+      <p style="color: rgb(128, 46, 59);">Age: {{dog.age}}</p>
+      <div *ngIf="dog.isAdopted" class="form-check form-switch" style="color: rgb(148, 159, 209);">
+        <input class="form-check-input" disabled type="checkbox" role="switch" checked id="flexSwitch">
+        <label class="form-check-label" for="flexSwitch">Adopted</label>
+      </div>
+      <div *ngIf="!dog.isAdopted" class="form-check form-switch" style="color: rgb(80, 63, 156);">
+        <input class="form-check-input" disabled type="checkbox" role="switch"  id="flexSwitch">
+        <label class="form-check-label" for="flexSwitch">Adopted</label>
+      </div>
+      <div style="display: flex; justify-content: space-between;">
+        <a routerLink="" class="btn btn-outline-success">Home</a>
+        <a [routerLink]="['/edit',dog.id]" class="btn btn-outline-secondary">Mettre à jour</a>
+        <a  class="btn btn-outline-danger" (click)="remove()">Supprimer</a>
+      </div>
+
+    </div>
+  </div>
+</div>
